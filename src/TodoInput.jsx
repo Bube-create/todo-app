@@ -10,8 +10,10 @@ const TodoInput = ()=>{
 
 	function submitHandler(e) {
 		e.preventDefault();
+		if(todoInput){
+			tododispatch({type: "add", payload : {id: Math.floor(Math.random() * 100), content: todoInput, isCompleted: false}})
 
-		tododispatch({type: "add", payload : {id: Math.floor(Math.random() * 100), content: todoInput, isCompleted: false}})
+		}
 
 		setTodoInput("")
 		
